@@ -25,10 +25,11 @@
     </div>
     <div class="row m-0 mt-2">
         <div class="">
-            <button type="button" class="btn btn-lg btn-default bg-danger"><i class="bi bi-stop-circle-fill"></i></button>
-            <input type="text" class="btn bg-white input-sm col-sm-1" id="stopwatch" name="stopwatch">
-            <button type="button" class="btn btn-lg btn-default bg-success"><i class="bi bi-play-circle-fill"></i></button>
-            <button type="button" class="btn btn-lg btn-default bg-warning" disabled><i class="bi bi-pause-circle-fill"></i></button>
+            <button type="button" class="btn btn-lg btn-default bg-danger" id="resetStopwatch" name="resetStopwatch"><i class="bi bi-stop-circle-fill"></i></button>
+            <input type="text" class="btn bg-white input-sm col-sm-1" id="stopwatch" name="stopwatch" value="0:00:00.000">
+            <button type="button" class="btn btn-lg btn-default bg-success" id="startPauseStopwatch" name="startPauseStopwatch">
+                <i id="startPauseStopwatchIcon" name="startPauseStopwatchIcon" class="bi bi-play-circle-fill"></i>
+            </button>
         </div>
     </div>
     <div class="row m-0 mt-4">
