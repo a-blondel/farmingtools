@@ -6,74 +6,92 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="farmingtools.js"></script>
 <body class="bg-dark">
-    <div class="row m-0 mt-4">
-        <div class="">
-            <h3 class="text-white">Run counter&nbsp;<i class="bi bi-123"></i></h3>
+    <div class="col-sm-12 text-center">
+        <div class="row m-0 mt-2">
+            <div class="">
+                <h3 class="text-white">Run counter&nbsp;<i class="bi bi-123"></i></h3>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-2">
-        <div class="">
-            <button id="runCounterDecrement" name="runCounterDecrement" type="button" class="btn btn-lg btn-default bg-danger"><i class="bi bi-dash-circle-fill"></i></button>
-            <input type="number" class="btn bg-white input-sm col-sm-1" id="runNumber" name="runNumber" min="0" value="0">
-            <button id="runCounterIncrement" name="runCounterIncrement" type="button" class="btn btn-lg btn-default bg-success"><i class="bi bi-plus-circle-fill"></i></button>
+        <div class="row m-0 mt-2 justify-content-center">
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <button id="runCounterDecrement" name="runCounterDecrement" type="button" class="btn btn-lg btn-default bg-danger"><i class="bi bi-dash-circle-fill"></i></button>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control bg-white text-center" id="runNumber" name="runNumber" min="0" value="0">
+                    </div>
+                    <div class="col-sm-3">
+                        <button id="runCounterIncrement" name="runCounterIncrement" type="button" class="btn btn-lg btn-default bg-success"><i class="bi bi-plus-circle-fill"></i></button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-4">
-        <div class="">
-            <h3 class="text-white">Stopwatch&nbsp;<i class="bi bi-stopwatch-fill"></i></h3>
+        <div class="row m-0 mt-3">
+            <div class="">
+                <h3 class="text-white">Stopwatch&nbsp;<i class="bi bi-stopwatch-fill"></i></h3>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-2">
-        <div class="">
-            <button type="button" class="btn btn-lg btn-default bg-danger" id="resetStopwatch" name="resetStopwatch"><i class="bi bi-stop-circle-fill"></i></button>
-            <input type="text" class="btn bg-white input-sm col-sm-1" id="stopwatch" name="stopwatch" value="0:00:00.000">
-            <button type="button" class="btn btn-lg btn-default bg-success" id="startPauseStopwatch" name="startPauseStopwatch">
-                <i id="startPauseStopwatchIcon" name="startPauseStopwatchIcon" class="bi bi-play-circle-fill"></i>
-            </button>
+        <div class="row m-0 mt-2 justify-content-center">
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-lg btn-default bg-danger" id="resetStopwatch" name="resetStopwatch"><i class="bi bi-stop-circle-fill"></i></button>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control bg-white text-center" id="stopwatch" name="stopwatch" value="0:00:00.000">
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-lg btn-default bg-success" id="startPauseStopwatch" name="startPauseStopwatch">
+                            <i id="startPauseStopwatchIcon" name="startPauseStopwatchIcon" class="bi bi-play-circle-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-4">
-        <div class="">
-            <h3 class="text-white">Points before&nbsp;<i class="bi bi-arrow-counterclockwise"></i></h3>
+        <div class="row m-0 mt-3">
+            <div class="">
+                <h3 class="text-white">Points before&nbsp;<i class="bi bi-arrow-counterclockwise"></i></h3>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-2">
-        <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsBefore" name="ptsBefore" min="0">
+        <div class="row m-0 mt-2 justify-content-center">
+            <div class="col-sm-2">
+                <input type="number" class="form-control bg-white text-center" id="ptsBefore" name="ptsBefore" min="0">
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-4">
-        <div class="">
-            <h3 class="text-white">Points after&nbsp;<i class="bi bi-arrow-clockwise"></i></i></h3>
+        <div class="row m-0 mt-3">
+            <div class="">
+                <h3 class="text-white">Points after&nbsp;<i class="bi bi-arrow-clockwise"></i></i></h3>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-2">
-        <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsAfter" name="ptsAfter" min="0">
+        <div class="row m-0 mt-2 justify-content-center">
+            <div class="col-sm-2">
+                <input type="number" class="form-control bg-white text-center" id="ptsAfter" name="ptsAfter" min="0">
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-4">
-        <div class="">
-            <h3 class="text-white">Goal&nbsp;<i class="bi bi-graph-up-arrow"></i></h3>
+        <div class="row m-0 mt-3">
+            <div class="">
+                <h3 class="text-white">Goal&nbsp;<i class="bi bi-graph-up-arrow"></i></h3>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-2">
-        <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="goal" name="goal" min="0">
+        <div class="row m-0 mt-2 justify-content-center">
+            <div class="col-sm-2">
+                <input type="number" class="form-control bg-white text-center" id="goal" name="goal" min="0">
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-5">
-        <div class="">
-            <button type="button" class="btn btn-lg btn-default bg-info" id="calc" name="calc"><i class="bi bi-calculator-fill"></i></button>
+        <div class="row m-0 mt-5">
+            <div class="">
+                <button type="button" class="btn btn-lg btn-default bg-info col-sm-1" id="calc" name="calc"><i class="bi bi-calculator-fill"></i></button>
+            </div>
         </div>
-    </div>
-    <div class="row m-0 mt-5">
-        <div class="">
-            <h3 class="text-white">Earned points : <span class="text-white" id="earnedPoints" name="earnedPoints"><i class="bi bi-question"></i></span></h3>
-            <h3 class="text-white">Average points per run : <span class="text-white" id="avgPtsPerRun" name="avgPtsPerRun"><i class="bi bi-question"></i></span></h3>
-            <h3 class="text-white">Average time per run : <span class="text-white" id="avgTimePerRun" name="avgTimePerRun"><i class="bi bi-question"></i></span></h3>
-            <h3 class="text-white">Number of runs required to reach the goal : <span class="text-white" id="runsRequired" name="runsRequired"><i class="bi bi-question"></i></span></h3>
-            <h3 class="text-white">Time required to reach the goal : <span class="text-white" id="timeRequired" name="timeRequired"><i class="bi bi-question"></i></span></h3>
+        <div class="row m-0 mt-4">
+            <div class="">
+                <h3 class="text-white">Earned points : <span class="text-white" id="earnedPoints" name="earnedPoints"><i class="bi bi-question-circle"></i></span></h3>
+                <h3 class="text-white">Avg time per run : <span class="text-white" id="avgTimePerRun" name="avgTimePerRun"><i class="bi bi-question-circle"></i></span></h3>
+                <h3 class="text-white">Avg points per run : <span class="text-white" id="avgPtsPerRun" name="avgPtsPerRun"><i class="bi bi-question-circle"></i></span></h3>
+                <h3 class="text-white">Runs to reach the goal : <span class="text-white" id="runsRequired" name="runsRequired"><i class="bi bi-question-circle"></i></span></h3>
+                <h3 class="text-white">Time to reach the goal : <span class="text-white" id="timeRequired" name="timeRequired"><i class="bi bi-question-circle"></i></span></h3>
+            </div>
         </div>
     </div>
 </body>
