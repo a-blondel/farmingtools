@@ -2,19 +2,22 @@ var stopwatchObj;
 var pause = false;
 var startDate = 0;
 var diffDate;
+var stopwatchMillis;
 
 const zeroPad = (num, places) => String(num).padStart(places, '0');
 
-function runStopwatch(){
-  var stopwatchMillis = new Date() - startDate;
-  diffDate = new Date(stopwatchMillis);
+function formatDate(date) {
+  var millis = zeroPad(date.getMilliseconds(),3);
+	var sec = zeroPad(date.getSeconds(), 2);
+	var min = zeroPad(date.getMinutes(), 2);
+	var hour = zeroPad(date.getHours()-1, 1);
+  return hour + ":" + min + ":" + sec + "." + millis;
+}
 
-  var millis = zeroPad(diffDate.getMilliseconds(),3);
-	var sec = zeroPad(diffDate.getSeconds(), 2);
-	var min = zeroPad(diffDate.getMinutes(), 2);
-	var hour = zeroPad(diffDate.getHours()-1, 1);
-  
-  $('#stopwatch').val(hour + ":" + min + ":" + sec + "." + millis);  
+function runStopwatch(){
+  stopwatchMillis = new Date() - startDate;
+  diffDate = new Date(stopwatchMillis);
+  $('#stopwatch').val(formatDate(diffDate));  
 }
 
 function resetStopwatch(){
@@ -59,6 +62,24 @@ $(document).ready(function(){
 
   $('#resetStopwatch').click(function() {
     resetStopwatch();
+  });
+
+  $('#calc').click(function() {
+    var runNumber = parseInt($('#runNumber').val(), 10);
+    var ptsBefore = parseInt($('#ptsBefore').val(), 10);
+    var ptsAfter = parseInt($('#ptsAfter').val(), 10);
+    var goal = parseInt($('#goal').val(), 10);
+
+    var earnedPoints = ptsAfter - ptsBefore;
+    var avgTimePerRun = stopwatchMillis / runNumber;
+    var avgPtsPerRun = earnedPoints / runNumber;
+    var runsRequired = goal/avgPtsPerRun;
+
+    $('#earnedPoints').text(earnedPoints);
+    $('#avgPtsPerRun').text(Math.round(avgPtsPerRun*1000)/1000);
+    $('#avgTimePerRun').text(formatDate(new Date(avgTimePerRun)));
+    $('#runsRequired').text(Math.round(runsRequired));
+    $('#timeRequired').text(formatDate(new Date(runsRequired*avgTimePerRun)));
   });
 
 });

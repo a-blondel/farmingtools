@@ -8,7 +8,7 @@
 <body class="bg-dark">
     <div class="row m-0 mt-4">
         <div class="">
-            <h2 class="text-white">Run counter&nbsp;<i class="bi bi-sort-numeric-up-alt"></i><!-- <i class="bi bi-file-arrow-up-fill"></i> --></h2>
+            <h3 class="text-white">Run counter&nbsp;<i class="bi bi-123"></i></h3>
         </div>
     </div>
     <div class="row m-0 mt-2">
@@ -20,7 +20,7 @@
     </div>
     <div class="row m-0 mt-4">
         <div class="">
-            <h2 class="text-white">Stopwatch&nbsp;<i class="bi bi-stopwatch-fill"></i></h2>
+            <h3 class="text-white">Stopwatch&nbsp;<i class="bi bi-stopwatch-fill"></i></h3>
         </div>
     </div>
     <div class="row m-0 mt-2">
@@ -34,45 +34,46 @@
     </div>
     <div class="row m-0 mt-4">
         <div class="">
-            <h2 class="text-white">Points before&nbsp;<i class="bi bi-arrow-counterclockwise"></i></h2>
+            <h3 class="text-white">Points before&nbsp;<i class="bi bi-arrow-counterclockwise"></i></h3>
         </div>
     </div>
     <div class="row m-0 mt-2">
         <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsBefore" name="ptsBefore">
+            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsBefore" name="ptsBefore" min="0">
         </div>
     </div>
     <div class="row m-0 mt-4">
         <div class="">
-            <h2 class="text-white">Points after&nbsp;<i class="bi bi-arrow-clockwise"></i></i></h2>
+            <h3 class="text-white">Points after&nbsp;<i class="bi bi-arrow-clockwise"></i></i></h3>
         </div>
     </div>
     <div class="row m-0 mt-2">
         <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsAfter" name="ptsAfter">
+            <input type="number" class="btn bg-white input-sm col-sm-2" id="ptsAfter" name="ptsAfter" min="0">
         </div>
     </div>
     <div class="row m-0 mt-4">
         <div class="">
-            <h2 class="text-white">Goal&nbsp;<i class="bi bi-graph-up-arrow"></i></h2>
+            <h3 class="text-white">Goal&nbsp;<i class="bi bi-graph-up-arrow"></i></h3>
         </div>
     </div>
     <div class="row m-0 mt-2">
         <div class="">
-            <input type="number" class="btn bg-white input-sm col-sm-2" id="goal" name="goal">
+            <input type="number" class="btn bg-white input-sm col-sm-2" id="goal" name="goal" min="0">
         </div>
     </div>
     <div class="row m-0 mt-5">
         <div class="">
-            <button type="button" class="btn btn-lg btn-default bg-info" disabled><i class="bi bi-calculator-fill"></i></button>
+            <button type="button" class="btn btn-lg btn-default bg-info" id="calc" name="calc"><i class="bi bi-calculator-fill"></i></button>
         </div>
     </div>
-    <div class="row m-0 mt-4">
+    <div class="row m-0 mt-5">
         <div class="">
-            <h3 class="text-white">Average points per run</h3>
-            <h3 class="text-white">Average time per run</h3>
-            <h3 class="text-white">Number of runs required to reach the goal</h3>
-            <h3 class="text-white">Time required to reach the goal</h3>
+            <h3 class="text-white">Earned points : <span class="text-white" id="earnedPoints" name="earnedPoints"><i class="bi bi-question"></i></span></h3>
+            <h3 class="text-white">Average points per run : <span class="text-white" id="avgPtsPerRun" name="avgPtsPerRun"><i class="bi bi-question"></i></span></h3>
+            <h3 class="text-white">Average time per run : <span class="text-white" id="avgTimePerRun" name="avgTimePerRun"><i class="bi bi-question"></i></span></h3>
+            <h3 class="text-white">Number of runs required to reach the goal : <span class="text-white" id="runsRequired" name="runsRequired"><i class="bi bi-question"></i></span></h3>
+            <h3 class="text-white">Time required to reach the goal : <span class="text-white" id="timeRequired" name="timeRequired"><i class="bi bi-question"></i></span></h3>
         </div>
     </div>
 </body>
