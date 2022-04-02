@@ -6,18 +6,25 @@ var stopwatchMillis;
 
 const zeroPad = (num, places) => String(num).padStart(places, '0');
 
-function formatDate(date) {
+function formatDate(date, withDays) {
   var millis = zeroPad(date.getMilliseconds(),3);
 	var sec = zeroPad(date.getSeconds(), 2);
 	var min = zeroPad(date.getMinutes(), 2);
 	var hour = zeroPad(date.getHours()-1, 1);
-  return hour + ":" + min + ":" + sec + "." + millis;
+  var day = zeroPad(Math.floor((date - new Date(0)) / (1000*60*60*24)), 1);
+
+  if (withDays) {
+    return day + "d" + hour + "h" + min + "m" + sec + "s";
+  } else {
+    return hour + ":" + min + ":" + sec + "." + millis;
+  }
+  
 }
 
 function runStopwatch(){
   stopwatchMillis = new Date() - startDate;
   diffDate = new Date(stopwatchMillis);
-  $('#stopwatch').val(formatDate(diffDate));  
+  $('#stopwatch').val(formatDate(diffDate, false));  
 }
 
 function resetStopwatch(){
@@ -77,10 +84,10 @@ $(document).ready(function(){
     var runsRequired = goal/avgPtsPerRun;
 
     earnedPoints ? $('#earnedPoints').text(earnedPoints) : $('#earnedPoints').html('<i class="bi bi-question-circle"></i>');
-    isFinite(avgTimePerRun) ? $('#avgTimePerRun').text(formatDate(new Date(avgTimePerRun))) : $('#avgTimePerRun').html('<i class="bi bi-question-circle"></i>');
+    isFinite(avgTimePerRun) ? $('#avgTimePerRun').text(formatDate(new Date(avgTimePerRun), false)) : $('#avgTimePerRun').html('<i class="bi bi-question-circle"></i>');
     isFinite(avgPtsPerRun) ? $('#avgPtsPerRun').text(Math.round(avgPtsPerRun*1000)/1000) : $('#avgPtsPerRun').html('<i class="bi bi-question-circle"></i>');
     runsRequired ? $('#runsRequired').text(Math.round(runsRequired)) : $('#runsRequired').html('<i class="bi bi-question-circle"></i>');
-    runsRequired && avgTimePerRun ? $('#timeRequired').text(formatDate(new Date(runsRequired*avgTimePerRun))) : $('#timeRequired').html('<i class="bi bi-question-circle"></i>');
+    runsRequired && avgTimePerRun ? $('#timeRequired').text(formatDate(new Date(runsRequired*avgTimePerRun), true)) : $('#timeRequired').html('<i class="bi bi-question-circle"></i>');
   });
 
 });
