@@ -1,0 +1,32 @@
+.main-container {
+    width: 360px;
+    margin: 10px auto;
+    display: grid;
+}
+
+.custom-input {
+    margin: 5px auto;
+    width: 100%;
+    display: flex;
+}
+
+.custom-submit {
+    margin: 40px auto;
+    width: 100%;
+    display: flex;
+}
+
+.custom-text {
+    margin: auto;
+    width: 100%;
+    display: flex;
+}
+
+.submit-btn-width {
+    width: 50%;
+}
+
+.custom-input-margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
