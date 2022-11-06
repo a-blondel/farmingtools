@@ -81,11 +81,13 @@ $(document).ready(function(){
     var earnedPoints = ptsAfter - ptsBefore;
     var avgTimePerRun = stopwatchMillis / runNumber;
     var avgPtsPerRun = earnedPoints / runNumber;
+    var avgPtsPerHour =  3600000 / avgTimePerRun * avgPtsPerRun;
     var runsRequired = goal/avgPtsPerRun;
 
     earnedPoints ? $('#earnedPoints').text(earnedPoints) : $('#earnedPoints').html('<i class="bi bi-question-circle"></i>');
     isFinite(avgTimePerRun) ? $('#avgTimePerRun').text(formatDate(new Date(avgTimePerRun), false)) : $('#avgTimePerRun').html('<i class="bi bi-question-circle"></i>');
     isFinite(avgPtsPerRun) ? $('#avgPtsPerRun').text(Math.round(avgPtsPerRun*1000)/1000) : $('#avgPtsPerRun').html('<i class="bi bi-question-circle"></i>');
+    isFinite(avgPtsPerHour) ? $('#avgPtsPerHour').text(Math.round(avgPtsPerHour*1000)/1000) : $('#avgPtsPerHour').html('<i class="bi bi-question-circle"></i>');
     runsRequired ? $('#runsRequired').text(Math.round(runsRequired)) : $('#runsRequired').html('<i class="bi bi-question-circle"></i>');
     runsRequired && avgTimePerRun ? $('#timeRequired').text(formatDate(new Date(runsRequired*avgTimePerRun), true)) : $('#timeRequired').html('<i class="bi bi-question-circle"></i>');
   });
